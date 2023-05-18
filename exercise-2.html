@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid exercise</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            outline: 0px solid cadetblue;
+            box-sizing: border-box;
+        }
+        .container {
+            display: inline-grid;
+            grid-template-rows: repeat(5, 60px);
+            grid-template-columns: repeat(5, 60px);
+            background-color: lightblue;
+            grid-template-areas: "living-room living-room living-room living-room living-room"
+            "living-room living-room living-room living-room living-room"
+            "bedroom bedroom bathroom kitchen kitchen"
+            "bedroom bedroom bathroom kitchen kitchen"
+            "closet closet bathroom kitchen kitchen";
+            row-gap: 10px;
+            column-gap: 10px;
+            padding: 10px;
+            border: 2px solid palevioletred;
+        }
+        .room {
+            border: 2px solid cadetblue;
+            font-size: 75%;
+            text-align: center;
+        }
+        #living-room {
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 5;
+        }
+        #kitchen {
+            grid-area: kitchen;
+        }
+        #bedroom {
+            grid-area: bedroom;
+        }
+        #bathroom {
+            grid-area: bathroom;
+        }
+        #closet {
+            grid-area: closet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="room" id="living-room">Living Room</div>
+        <div class="room" id="kitchen">Kitchen</div>
+        <div class="room" id="bedroom">Bedroom</div>
+        <div class="room" id="bathroom">Bathroom</div>
+        <div class="room" id="closet">Closet</div>
+    </div>
+</body>
+</html>
